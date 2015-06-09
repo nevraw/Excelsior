@@ -77,11 +77,10 @@
 			}
 			for(var i = 0; i < radioLength; i++) {
 				radioObj[i].checked = false;
-//				document.write('unsetting value ' + i);
-// Put code here to set value once know how
-//				if(radioObj[i].value == newValue.toString()) {
-//					document.write('setting value ' + i);
-//					radioObj[i].checked = true;
+				document.write('unsetting value ' + i);
+				if(radioObj[i].value == newValue.toString()) {
+					document.write('setting value ' + i);
+					radioObj[i].checked = true;
 				}
 			}
 		}
@@ -89,11 +88,12 @@
 		function applyOptions() {
 			var $form	= $('#config');
 			var opts	= JSON.parse(getParam('options'));
-			document.write('opts.bgshapes: ' + opts.bgshapes);
-			if (opts && opts.bgshapes) {
-				document.write('calling setCheckedValue()');
-				setCheckedValue(document.forms['config'].elements['bgshapes'], opts.bgshapes);
-			}
+// Put code here to set value once know how
+//			document.write('opts.bgshapes: ' + opts.bgshapes);
+//			if (opts && opts.bgshapes) {
+//				document.write('calling setCheckedValue()');
+//				setCheckedValue(document.forms['config'].elements['bgshapes'], opts.bgshapes);
+//			}
 		}
 		function getParam(key) {
 			var params = window.location.hash;
