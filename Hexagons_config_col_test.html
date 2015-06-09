@@ -69,7 +69,7 @@
 			var $form	= $('#config');
 			var opts	= JSON.parse(getParam('options'));
 			if (opts && opts.bgshapes) {
-				$form.find('[name="bgshapes"]').prop('checked', true);
+				$form.find('[name="bgshapes"]').value(opts.bgshapes);
 			}
 		}
 
