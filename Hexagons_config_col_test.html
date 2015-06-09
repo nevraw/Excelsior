@@ -67,6 +67,7 @@
 
 
 		function setCheckedValue(radioObj, newValue) {
+			document.write('in setCheckedValue());
 			var radioLength = radioObj.length;
 			document.write('in setCheckedValue() for ' + radioObj + ', ' + newValue);
 			if(radioLength == undefined) {
@@ -90,7 +91,7 @@
 			document.write('opts.bgshapes: ' + opts.bgshapes);
 			if (opts && opts.bgshapes) {
 				document.write('calling setCheckedValue()');
-				setCheckedValue(bgshapes, opts.bgshapes);
+				setCheckedValue(document.forms['config'].elements['bgshapes'], opts.bgshapes);
 			}
 		}
 		function getParam(key) {
