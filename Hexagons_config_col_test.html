@@ -69,7 +69,8 @@
 			var $form	= $('#config');
 			var opts	= JSON.parse(getParam('options'));
 			if (opts && opts.bgshapes) {
-				$form.find('[name="bgshapes"]').value(opts.bgshapes).checked = true;
+				bgshapes = opts.bgshapes;
+				document.getElementById(bgshapes).checked = true;
 			}
 		}
 		function getParam(key) {
