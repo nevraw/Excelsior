@@ -88,13 +88,11 @@
 		function applyOptions() {
 			var $form	= $('#config');
 			var opts	= JSON.parse(getParam('options'));
-// Put code here to set value once know how
-//			document.write('opts.bgshapes: ' + opts.bgshapes);
-//			if (opts && opts.bgshapes) {
-//				document.write('calling setCheckedValue()');
-//				setCheckedValue(document.forms['config'].elements['bgshapes'], opts.bgshapes);
-//			}
+			if (opts && opts.bgshapes) {
+				$form.find('[name="bgshapes"]').prop('checked', true);
+			}
 		}
+
 		function getParam(key) {
 			var params = window.location.hash;
 			var val;
