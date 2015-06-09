@@ -83,7 +83,7 @@
 		function applyOptions() {
 			var $form	= $('#config');
 			var opts	= JSON.parse(getParam('options'));
-			window.open('opts.bgshapes: " + opts.bgshapes);
+			window.open('opts.bgshapes: ' + opts.bgshapes);
 			if (opts && opts.bgshapes) {
 				setCheckedValue(bgshapes, opts.bgshapes);
 			}
