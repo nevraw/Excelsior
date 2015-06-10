@@ -72,10 +72,7 @@
 		}
 
 		function setCheckedValue(radioObj, newValue) {
-			console.log('in setCheckedValue() (HTML)');
-			console.log('in setCheckedValue());
 			var radioLength = radioObj.length;
-			console.log('in setCheckedValue() for ' + radioObj + ', ' + newValue);
 			if(radioLength == undefined) {
 				console.log('radioLength == undefined');
 				radioObj.checked = (radioObj.value == newValue.toString());
@@ -83,31 +80,25 @@
 			}
 			for(var i = 0; i < radioLength; i++) {
 				radioObj[i].checked = false;
-				console.log('unsetting value ' + i);
 				if(radioObj[i].value == newValue.toString()) {
-					console.log('setting value ' + i);
 					radioObj[i].checked = true;
 				}
 			}
 		}
 
 		function saveOptions() {
-			console.log('in saveOptions() (HTML)');
 			var params = {};
-//			$('#config').serializeArray().forEach(function(pair) {
-//				params[pair.name] = pair.value;
-//			});
+			$('#config').serializeArray().forEach(function(pair) {
+				params[pair.name] = pair.value;
+			});
 
-//			console.log('saveOptions(): params.bgshapes = ' + params.bgshapes);
 			var options = {
-				bgshapes:	getCheckedValue(document.forms['config'].elements['bgshapes']);
+				bgshapes:		params.bgshapes
 			}
 			return options;
 		}
 
-
 		function applyOptions() {
-			console.log('in applyOptions() (HTML)');
 			var $form	= $('#config');
 			var opts	= JSON.parse(getParam('options'));
 			if (opts && opts.bgshapes) {
