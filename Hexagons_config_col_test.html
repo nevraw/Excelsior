@@ -85,19 +85,19 @@
 		}
 
 		function setCheckedValue(radioObj, newValue) {
-			document.write('in setCheckedValue());
+			console.log('in setCheckedValue());
 			var radioLength = radioObj.length;
-			document.write('in setCheckedValue() for ' + radioObj + ', ' + newValue);
+			console.log('in setCheckedValue() for ' + radioObj + ', ' + newValue);
 			if(radioLength == undefined) {
-				document.write('radioLength == undefined');
+				console.log('radioLength == undefined');
 				radioObj.checked = (radioObj.value == newValue.toString());
 				return;
 			}
 			for(var i = 0; i < radioLength; i++) {
 				radioObj[i].checked = false;
-				document.write('unsetting value ' + i);
+				console.log('unsetting value ' + i);
 				if(radioObj[i].value == newValue.toString()) {
-					document.write('setting value ' + i);
+					console.log('setting value ' + i);
 					radioObj[i].checked = true;
 				}
 			}
