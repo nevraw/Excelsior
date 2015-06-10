@@ -59,12 +59,30 @@
 				params[pair.name] = pair.value;
 			});
 
+			document.write('saveOptions(): params.bgshapes = ' + params.bgshapes);
 			var options = {
 				bgshapes:		params.bgshapes
 			}
 			return options;
 		}
 
+
+		function getCheckedValue(radioObj) {
+			if(!radioObj)
+				return "";
+			var radioLength = radioObj.length;
+			if(radioLength == undefined)
+				if(radioObj.checked)
+					return radioObj.value;
+				else
+					return "";
+			for(var i = 0; i < radioLength; i++) {
+				if(radioObj[i].checked) {
+					return radioObj[i].value;
+				}
+			}
+			return "";
+		}
 
 		function setCheckedValue(radioObj, newValue) {
 			document.write('in setCheckedValue());
