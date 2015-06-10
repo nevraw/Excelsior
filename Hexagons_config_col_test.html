@@ -53,21 +53,6 @@
 	<script>
 		var LATEST = "1.0";
 
-		function saveOptions() {
-			console.log('in saveOptions() (HTML)');
-			var params = {};
-			$('#config').serializeArray().forEach(function(pair) {
-				params[pair.name] = pair.value;
-			});
-
-			console.log('saveOptions(): params.bgshapes = ' + params.bgshapes);
-			var options = {
-				bgshapes:		params.bgshapes
-			}
-			return options;
-		}
-
-
 		function getCheckedValue(radioObj) {
 			console.log('in getCheckedValue() (HTML)');
 			if(!radioObj)
@@ -105,6 +90,21 @@
 				}
 			}
 		}
+
+		function saveOptions() {
+			console.log('in saveOptions() (HTML)');
+			var params = {};
+//			$('#config').serializeArray().forEach(function(pair) {
+//				params[pair.name] = pair.value;
+//			});
+
+//			console.log('saveOptions(): params.bgshapes = ' + params.bgshapes);
+			var options = {
+				bgshapes:	getCheckedValue(document.forms['config'].elements['bgshapes']);
+			}
+			return options;
+		}
+
 
 		function applyOptions() {
 			console.log('in applyOptions() (HTML)');
