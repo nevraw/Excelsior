@@ -71,7 +71,8 @@
 			document.write('opts.bgshapes ' + opts.bgshapes);
 
 			if (opts && opts.bgshapes) {
-				$form.find('[name="bgshapes"]').prop('checked', true);
+//				$form.find('[name="bgshapes"]').prop('checked', true);
+				setCheckedValue(document.forms['config'].elements['bgshapes'], opts.bgshapes);
 			}
 		}
 
