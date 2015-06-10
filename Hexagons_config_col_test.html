@@ -54,12 +54,13 @@
 		var LATEST = "1.0";
 
 		function saveOptions() {
+			console.log('in saveOptions() (HTML)');
 			var params = {};
 			$('#config').serializeArray().forEach(function(pair) {
 				params[pair.name] = pair.value;
 			});
 
-			document.write('saveOptions(): params.bgshapes = ' + params.bgshapes);
+			console.log('saveOptions(): params.bgshapes = ' + params.bgshapes);
 			var options = {
 				bgshapes:		params.bgshapes
 			}
@@ -68,6 +69,7 @@
 
 
 		function getCheckedValue(radioObj) {
+			console.log('in getCheckedValue() (HTML)');
 			if(!radioObj)
 				return "";
 			var radioLength = radioObj.length;
@@ -85,6 +87,7 @@
 		}
 
 		function setCheckedValue(radioObj, newValue) {
+			console.log('in setCheckedValue() (HTML)');
 			console.log('in setCheckedValue());
 			var radioLength = radioObj.length;
 			console.log('in setCheckedValue() for ' + radioObj + ', ' + newValue);
@@ -104,6 +107,7 @@
 		}
 
 		function applyOptions() {
+			console.log('in applyOptions() (HTML)');
 			var $form	= $('#config');
 			var opts	= JSON.parse(getParam('options'));
 			if (opts && opts.bgshapes) {
@@ -142,11 +146,13 @@
 		}
 		
 		$("#b-submit").click(function() {
+			console.log('in #b-submit (HTML)');
 			var location = getQueryParam('return_to', 'pebblejs://close#');
 			document.location = location + encodeURIComponent(JSON.stringify(saveOptions()));
 		})
 	
 		$('#xbtnCancel').click(function () {
+			console.log('in #xbtnCancel (HTML)');
 			var location = getQueryParam('return_to', 'pebblejs://close#');
 			document.location = location;
 		})
