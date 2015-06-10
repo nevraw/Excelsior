@@ -68,7 +68,9 @@
 		function applyOptions() {
 			var $form	= $('#config');
 			var opts	= JSON.parse(getParam('options'));
-			if (opts && opts.invert) {
+			document.write('opts.bgshapes ' + opts.bgshapes);
+
+			if (opts && opts.bgshapes) {
 				$form.find('[name="bgshapes"]').prop('checked', true);
 			}
 		}
