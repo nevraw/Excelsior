@@ -30,8 +30,8 @@
 			<legend>Background shapes</legend>
 			<div class="radio">
 			<label>
-				<input type="radio" name="bgshapes" value="1" checked>Dark gray<br>
-				<input type="radio" name="bgshapes" value="2">Light gray<br>
+				<input type="radio" name="bgshapes" value="1" checked>Dark gray
+				<input type="radio" name="bgshapes" value="2">Light gray
 				<input type="radio" name="bgshapes" value="3">Hidden
 			</label>
 		</div>
@@ -89,7 +89,8 @@
 			var $form	= $('#config');
 			var opts	= JSON.parse(getParam('options'));
 			if (opts && opts.bgshapes) {
-				$form.find('[name="bgshapes"]').prop('checked', true);
+				setCheckedValue(document.forms['config'].elements['bgshapes'], opts.bgshapes);
+//				$form.find('[name="bgshapes"]').prop('checked', true);
 			}
 		}
 
