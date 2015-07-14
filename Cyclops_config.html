@@ -43,7 +43,18 @@
 			<div class="radio">
 			<label>
 				<input type="radio" name="shakeaction" value="1" checked>Switch between normal & cheat mode<br>
-				<input type="radio" name="shakeaction" value="2">Disable shake (default for count cells mode)
+				<input type="radio" name="shakeaction" value="2">Disable cheat mode
+			</label>
+		</div>
+  		</fieldset>
+                <br><br>     
+
+		<fieldset style="padding:6px">
+			<legend>Animation</legend>
+			<div class="radio">
+			<label>
+				<input type="radio" name="animate" value="1" checked>Animation on (every 15 minutes)<br>
+				<input type="radio" name="animate" value="2">Animation off
 			</label>
 		</div>
   		</fieldset>
@@ -106,6 +117,7 @@
 			var options = {
 				dispmode:		params.dispmode,
 				shakeaction:		params.shakeaction,
+				animate:		params.animate
 			}
 			return options;
 		}
@@ -119,7 +131,11 @@
 			}
 			if (opts && opts.shakeaction) {
 				setCheckedValue(document.forms['config'].elements['shakeaction'], opts.shakeaction);
-//				$form.find('[name="background"]').prop('checked', true);
+//				$form.find('[name="shakeaction"]').prop('checked', true);
+			}
+			if (opts && opts.animate) {
+				setCheckedValue(document.forms['config'].elements['animate'], opts.shakeaction);
+//				$form.find('[name="animate"]').prop('checked', true);
 			}
 		}
 
