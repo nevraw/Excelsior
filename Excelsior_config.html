@@ -30,10 +30,10 @@
 			<legend>Time display mode</legend>
 			<div class="radio">
 			<label>
-				<input type="radio" name="color_set" value="1" checked>Hours: Orange, Minutes: Cyan<br>
-				<input type="radio" name="color_set" value="2">Hours: Cyan, Minutes: Orange<br>
-				<input type="radio" name="color_set" value="3">Hours: Green, Minutes: Yellow<br>
-				<input type="radio" name="color_set" value="4">Hours: Red, Minutes: Orange<br>
+				<input type="radio" name="colorset" value="1" checked>Hours: Orange, Minutes: Cyan<br>
+				<input type="radio" name="colorset" value="2">Hours: Cyan, Minutes: Orange<br>
+				<input type="radio" name="colorset" value="3">Hours: Green, Minutes: Yellow<br>
+				<input type="radio" name="colorset" value="4">Hours: Red, Minutes: Orange<br>
 			</label>
 		</div>
   		</fieldset>
@@ -94,7 +94,7 @@
 			});
 
 			var options = {
-				color_set:		params.color_set
+				colorset:		params.colorset
 			}
 			return options;
 		}
@@ -102,8 +102,8 @@
 		function applyOptions() {
 			var $form	= $('#config');
 			var opts	= JSON.parse(getParam('options'));
-			if (opts && opts.color_set) {
-				setCheckedValue(document.forms['config'].elements['color_set'], opts.dispmode);
+			if (opts && opts.colorset) {
+				setCheckedValue(document.forms['config'].elements['colorset'], opts.colorset);
 //				$form.find('[name="color_set"]').prop('checked', true);
 			}
 		}
